@@ -29,7 +29,7 @@
 
 6.
 
-	> $ kubectl run drkiq --image=drkiq --port=8000
+	> $ kubectl run drkiq:v1 --image=drkiq --port=8000
 
 	> $ kubectl get pods
 	NAME                     READY     STATUS             RESTARTS   AGE
