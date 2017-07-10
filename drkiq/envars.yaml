@@ -1,0 +1,24 @@
+kind: Pod
+metadata:
+  name: envar-demo
+  labels:
+    purpose: demonstrate-envars
+spec:
+  containers:
+  - name: envar-demo-container
+    image: drkiq:v1
+    env:
+    - name: DEMO_GREETING
+      value: "Hello from the environment"
+    - name: SECRET_TOKEN
+      value: "asecuretokenwouldnormallygohere"
+    - name: WORKER_PROCESSES
+      value: 1
+    - name: LISTEN_ON
+      value: 0.0.0.0:8000
+    - name: DATABASE_URL
+      value: postgresql://drkiq:yourpassword@postgres:5432/drkiq?encoding=utf8&pool=5&timeout=5000
+    - name: CACHE_URL
+      value: redis://redis:6379/0
+    - name: JOB_WORKER_URL
+      value: redis://redis:6379/0
