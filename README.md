@@ -8,14 +8,20 @@
 
 3.
 > $ minikube start
+
 > $ kubectl config use-context minikube
+
 > $ eval $(minikube docker-env)
+
 > $ cd drkiq
+
 > $ docker build -t drkiq:v1 .
 
 4. Install kompose
 > $ curl -L https://github.com/kubernetes-incubator/kompose/releases/download/v0.7.0/kompose-linux-amd64 -o kompose
+
 > $ chmod +x kompose
+
 > $ sudo mv ./kompose /usr/local/bin/kompose
 
 5. Convert docker-compose.yml to yaml files
