@@ -26,13 +26,10 @@
 	> $ kubectl run drkiq --image=drkiq --port=8000
 
 	> $ kubectl get pods
-
 	NAME                     READY     STATUS             RESTARTS   AGE
-
 	drkiq-2256726683-bt874   0/1       CrashLoopBackOff   1          6m
 	
 	> $ kubectl logs drkiq-2256726683-bt874
-
 	/usr/local/bundle/gems/unicorn-4.9.0/lib/unicorn/configurator.rb:597:in `set_int': too low (< 1): worker_processes=0 (ArgumentError)
 		from /usr/local/bundle/gems/unicorn-4.9.0/lib/unicorn/configurator.rb:212:in `worker_processes'
 		from config/unicorn.rb:6:in `reload'
