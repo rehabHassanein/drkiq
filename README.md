@@ -1,26 +1,26 @@
 1. Install kubectl
 
-# curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+> $ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
 
 2. Install minikube
 
-# curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.20.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+> $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.20.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 
 3.
-# minikube start
-# kubectl config use-context minikube
-# eval $(minikube docker-env)
-# cd drkiq
-# docker build -t drkiq:v1 .
+> $ minikube start
+> $ kubectl config use-context minikube
+> $ eval $(minikube docker-env)
+> $ cd drkiq
+> $ docker build -t drkiq:v1 .
 
 4. Install kompose
-curl -L https://github.com/kubernetes-incubator/kompose/releases/download/v0.7.0/kompose-linux-amd64 -o kompose
-chmod +x kompose
-sudo mv ./kompose /usr/local/bin/kompose
+> $ curl -L https://github.com/kubernetes-incubator/kompose/releases/download/v0.7.0/kompose-linux-amd64 -o kompose
+> $ chmod +x kompose
+> $ sudo mv ./kompose /usr/local/bin/kompose
 
-5. kompose convert -f docker-compose.yaml
+5. $ kompose convert -f docker-compose.yaml
 
-6. kubectl run drkiq --image=drkiq --port=8000
+6. $ kubectl run drkiq --image=drkiq --port=8000
 
 	$ kubectl get pods
 	NAME                     READY     STATUS             RESTARTS   AGE
@@ -43,7 +43,7 @@ sudo mv ./kompose /usr/local/bin/kompose
 7. Notes:
 	- It appears that environment variables aren't passed, it reads worker_processes=0
 	- Followed were many trials to pass the variables.
-		: Defined a Pod.
-		: Defined a secret.
-		: Tried using configMaps.
+		-- Defined a Pod.
+		-- Defined a secret.
+		-- Tried using configMaps.
 	- Both trials failed with the same error.
